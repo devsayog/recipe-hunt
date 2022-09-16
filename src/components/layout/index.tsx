@@ -11,7 +11,7 @@ const Layout = ({ children }: ILayoutProps) => {
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
-      <main className="mt-5 grow">{children}</main>
+      <main className="mx-auto max-w-7xl grow">{children}</main>
       <Footer />
     </div>
   )

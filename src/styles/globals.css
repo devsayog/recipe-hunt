@@ -6,6 +6,9 @@
   body {
     @apply bg-zinc-800 text-gray-400;
   }
+  section {
+    @apply my-5 md:my-8 xl:my-12 px-2;
+  }
 }
 @layer components {
   .link {
