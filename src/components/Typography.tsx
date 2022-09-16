@@ -10,6 +10,16 @@ export const Heading2 = ({ children }: IHeading2Props) => {
     </h2>
   )
 }
+interface IHeading3Props {
+  text: string
+}
+export const Heading3 = ({ text }: IHeading3Props) => {
+  return (
+    <h3 className="font-mirza text-xl capitalize sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
+      {text}
+    </h3>
+  )
+}
 interface IParagraphProps {
   text: string
   className?: string
