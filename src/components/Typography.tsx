@@ -25,6 +25,17 @@ export const Heading3 = ({ text, className }: IHeading3Props) => {
     </h3>
   )
 }
+export const Heading4 = ({ text, className }: IHeading3Props) => {
+  return (
+    <h4
+      className={`${
+        className && className
+      } font-mirza text-lg capitalize sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl`}
+    >
+      {text}
+    </h4>
+  )
+}
 interface IParagraphProps {
   text: string
   className?: string
