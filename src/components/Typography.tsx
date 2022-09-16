@@ -12,10 +12,15 @@ export const Heading2 = ({ children }: IHeading2Props) => {
 }
 interface IHeading3Props {
   text: string
+  className?: string
 }
-export const Heading3 = ({ text }: IHeading3Props) => {
+export const Heading3 = ({ text, className }: IHeading3Props) => {
   return (
-    <h3 className="font-mirza text-xl capitalize sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
+    <h3
+      className={`${
+        className && className
+      } font-mirza text-xl capitalize sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl`}
+    >
       {text}
     </h3>
   )
