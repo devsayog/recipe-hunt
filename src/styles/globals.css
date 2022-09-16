@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-zinc-800 text-gray-400;
+  }
+}
+@layer components {
+  .link {
+    @apply focus font-mirza flex  items-end font-medium rounded-md py-1 px-2 text-base capitalize text-gray-300 transition hover:text-gray-100 md:text-lg xl:text-xl;
+  }
+  .focus {
+    @apply focus:outline-none focus-visible:ring-2 ring-pink-600;
+  }
+}
