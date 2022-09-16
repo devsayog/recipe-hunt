@@ -27,9 +27,9 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link href="/meals">
+            <Link href="/category">
               <a className="link">
-                meals{' '}
+                category{' '}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -53,7 +53,7 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link href="/favourites">
+            <Link href="/favourite">
               <a className="link">
                 favourites{' '}
                 <svg

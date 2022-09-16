@@ -24,8 +24,8 @@ const Home = () => {
             </Heading2>
             <Paragraph text="Recipe for diffrent meals can be found here." />
             <div className="space-x-2 pt-2">
-              <Button href="/meals" text="Explore" />
-              <Button href="/meals" secondary text="Favourites" />
+              <Button href="/category" text="Explore" />
+              <Button href="/favourite" secondary text="Favourites" />
             </div>
           </div>
         </div>
