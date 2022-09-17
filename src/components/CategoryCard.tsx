@@ -1,16 +1,22 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import type { Category } from '@/types/category'
-
 import { Heading3, Paragraph } from './Typography'
 
 interface ICategoryCardProps {
-  category: Category
+  area?: boolean
+  category: {
+    idCategory?: string
+    strCategory: string
+    strCategoryThumb: string
+    strCategoryDescription?: string
+  }
 }
-const CategoryCard = ({ category: c }: ICategoryCardProps) => {
+const CategoryCard = ({ category: c, area }: ICategoryCardProps) => {
   return (
-    <Link href={`/category/${c.strCategory.toLowerCase()}`}>
+    <Link
+      href={`/${area ? 'area' : 'category'}/${c.strCategory.toLowerCase()}`}
+    >
       <a className="card-item">
         <Image
           src={c.strCategoryThumb}
@@ -24,7 +30,9 @@ const CategoryCard = ({ category: c }: ICategoryCardProps) => {
           className="relative -top-2 inline-flex -rotate-6 bg-zinc-900"
           text={c.strCategory}
         />
-        <Paragraph sm text={`${c.strCategoryDescription.slice(0, 100)}...`} />
+        {c.strCategoryDescription && (
+          <Paragraph sm text={`${c.strCategoryDescription.slice(0, 100)}...`} />
+        )}
       </a>
     </Link>
   )

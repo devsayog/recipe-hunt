@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
+import type { Area } from '@/types/area'
 import type { Categories } from '@/types/category'
 import type { Meals } from '@/types/meal'
 
@@ -18,11 +19,15 @@ const meadlDbApi = createApi({
     getMealById: builder.query<any, string>({
       query: (q) => `/lookup.php?i=${Number(q)}`,
     }),
+    getAreas: builder.query<Area, void>({
+      query: () => '/list.php?a=list',
+    }),
   }),
 })
 export const {
   useGetCategoriesQuery,
   useGetMealsByCategoryQuery,
   useGetMealByIdQuery,
+  useGetAreasQuery,
 } = meadlDbApi
 export default meadlDbApi
