@@ -23,7 +23,7 @@ const Index = () => {
             strCategory: m.strArea,
             strCategoryThumb: `/images/${m.strArea.toLowerCase()}.webp`,
           }
-          return <CategoryCard key={m.strArea} category={category} />
+          return <CategoryCard key={m.strArea} category={category} area />
         })}
       </div>
     </section>
