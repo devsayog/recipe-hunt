@@ -15,7 +15,14 @@ const meadlDbApi = createApi({
     getMealsByCategory: builder.query<Meals, string>({
       query: (q) => `/filter.php?c=${q}`,
     }),
+    getMealById: builder.query<any, string>({
+      query: (q) => `/lookup.php?i=${Number(q)}`,
+    }),
   }),
 })
-export const { useGetCategoriesQuery, useGetMealsByCategoryQuery } = meadlDbApi
+export const {
+  useGetCategoriesQuery,
+  useGetMealsByCategoryQuery,
+  useGetMealByIdQuery,
+} = meadlDbApi
 export default meadlDbApi
