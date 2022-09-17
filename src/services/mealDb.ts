@@ -22,6 +22,9 @@ const meadlDbApi = createApi({
     getAreas: builder.query<Area, void>({
       query: () => '/list.php?a=list',
     }),
+    getMealsByArea: builder.query<Meals, string>({
+      query: (q) => `/filter.php?a=${q}`,
+    }),
   }),
 })
 export const {
@@ -29,5 +32,6 @@ export const {
   useGetMealsByCategoryQuery,
   useGetMealByIdQuery,
   useGetAreasQuery,
+  useGetMealsByAreaQuery,
 } = meadlDbApi
 export default meadlDbApi
