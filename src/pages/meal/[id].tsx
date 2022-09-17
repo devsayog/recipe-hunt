@@ -1,17 +1,20 @@
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import { useState } from 'react'
 
 import AppLink from '@/components/AppLink'
 import { Heading2, Heading3, Paragraph } from '@/components/Typography'
 import { useGetMealByIdQuery } from '@/services/mealDb'
+import { selectFav, toggleFav } from '@/slice/favourites'
+import { useAppDispatch, useAppSelector } from '@/store/useReduxHooks'
 
 const Index = () => {
-  const [favourite, setIsFavourite] = useState(false)
+  const dispatch = useAppDispatch()
+  const { favourites } = useAppSelector(selectFav)
   const {
     query: { id },
   } = useRouter()
   const { data, isError, isLoading } = useGetMealByIdQuery(id as string)
+  const isFav = favourites.findIndex((f) => f.idMeal === id)
 
   if (isLoading) {
     return <p>Loading...</p>
@@ -37,9 +40,14 @@ const Index = () => {
   }))
 
   const handleClick = () => {
-    setIsFavourite((prev) => !prev)
+    dispatch(
+      toggleFav({
+        idMeal: meal.idMeal,
+        strMeal: meal.strMeal,
+        strMealThumb: meal.strMealThumb,
+      }),
+    )
   }
-
   return (
     <section>
       <div className="mx-auto max-w-xs py-3 sm:mx-0 sm:max-w-none md:py-5 xl:py-8">
@@ -61,8 +69,12 @@ const Index = () => {
           type="button"
           className="focus flex items-center rounded bg-purple-500 py-2 px-4 text-gray-200 transition-transform hover:scale-105"
         >
-          <Paragraph text="Add To favourites" />
-          {!favourite ? (
+          <Paragraph
+            text={`${
+              isFav < 0 ? 'Add To Favourites' : 'Remove From Favourites'
+            }`}
+          />
+          {isFav < 0 ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
