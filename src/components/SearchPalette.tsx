@@ -106,7 +106,7 @@ const SearchPalette = ({ handleClose, isOpen }: ISearchPaletteProps) => {
             {Array.isArray(data?.meals) && query.trim() && (
               <Combobox.Options
                 static
-                className="max-h-96 overflow-y-auto py-4"
+                className="scrollbar max-h-96 overflow-y-auto"
               >
                 {data?.meals.map((result) => (
                   <Combobox.Option value={result.idMeal} key={result.idMeal}>
