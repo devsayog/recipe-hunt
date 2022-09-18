@@ -5,17 +5,20 @@ import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
 
 import Layout from '@/components/layout'
+import Loader from '@/components/Loader'
 import store, { presistor } from '@/store'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={presistor}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </PersistGate>
-    </Provider>
+    <PersistGate loading={<Loader />} persistor={presistor}>
+      {() => (
+        <Provider store={store}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </Provider>
+      )}
+    </PersistGate>
   )
 }
 
