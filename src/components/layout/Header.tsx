@@ -223,7 +223,7 @@ const Header = () => {
         isOpen={searchPaletteOpen}
       />
       <div className="mt-6 flex items-center justify-between px-2">
-        <div className="hidden md:block" />
+        <div className="hidden md:flex md:flex-1" />
         <nav className="hidden rounded-3xl bg-black py-2 px-5 shadow-md md:block">
           <ul className="flex">
             <NavItem text="Home" icon={<HomeIcon />} href="/" />
@@ -236,26 +236,30 @@ const Header = () => {
             />
           </ul>
         </nav>
-        <button
-          className="focus flex items-center rounded-md border-2 border-pink-500 py-1 px-3 opacity-80 shadow-lg shadow-zinc-600/10 transition hover:opacity-100 md:py-2 md:px-5"
-          onClick={() => setSeachPaletteOpen(true)}
-        >
-          Search ... <span className="ml-1 hidden md:block">CTRL + K</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="currentColor"
-            className="ml-3 h-4 w-4 md:ml-5"
+        <div className="flex shrink-0 md:flex-1  md:justify-end">
+          <button
+            className="focus flex  items-center rounded-md border-2 border-pink-500 py-1 px-3 text-sm opacity-80 shadow-lg shadow-zinc-600/10 transition hover:opacity-100 md:py-2 md:px-5"
+            onClick={() => setSeachPaletteOpen(true)}
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-            />
-          </svg>
-        </button>
+            <span className="md:hidden">Search</span>
+            <span className="md:sr-only">Search</span>
+            <span className="ml-1 hidden md:block">CTRL + K</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
+              className="ml-3 h-4 w-4 md:ml-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+              />
+            </svg>
+          </button>
+        </div>
         <MobileNavigation />
       </div>
     </div>
