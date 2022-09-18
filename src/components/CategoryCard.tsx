@@ -17,7 +17,7 @@ const CategoryCard = ({ category: c, area }: ICategoryCardProps) => {
     <Link
       href={`/${area ? 'area' : 'category'}/${c.strCategory.toLowerCase()}`}
     >
-      <a className="card-item">
+      <a className="card-item transition-transform hover:-translate-y-1">
         <Image
           src={c.strCategoryThumb}
           alt={c.strCategory}

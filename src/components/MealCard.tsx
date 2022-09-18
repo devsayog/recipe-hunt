@@ -13,7 +13,7 @@ interface IMealCardProps {
 const MealCard = ({ meal: m, favourite }: IMealCardProps) => {
   const dispatch = useAppDispatch()
   return (
-    <div className="relative">
+    <div className="relative transition-transform hover:-translate-y-1">
       <Link key={m.idMeal} href={`/meal/${m.idMeal}`}>
         <a className="card-item  grid p-0">
           <div className="col-start-1 row-start-1 rounded">
