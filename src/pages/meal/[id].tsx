@@ -61,7 +61,7 @@ const Index = () => {
             className="object-cover"
           />
         </div>
-        <div className="my-3 bg-red-500">
+        <div className="my-3 inline-flex bg-red-500">
           <Heading2>{meal.strMeal}</Heading2>
         </div>
         <button

@@ -205,7 +205,7 @@ const MobileNavigation = () => {
 }
 
 const Header = () => {
-  const [searchPaletteOpen, setSeachPaletteOpen] = useState(true)
+  const [searchPaletteOpen, setSeachPaletteOpen] = useState(false)
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
