@@ -2,6 +2,8 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 
 import AppLink from '@/components/AppLink'
+import ErrorMessage from '@/components/ErrorMessage'
+import Loader from '@/components/Loader'
 import { Heading2, Heading3, Paragraph } from '@/components/Typography'
 import { useGetMealByIdQuery } from '@/services/mealDb'
 import { selectFav, toggleFav } from '@/slice/favourites'
@@ -17,13 +19,13 @@ const Index = () => {
   const isFav = favourites.findIndex((f) => f.idMeal === id)
 
   if (isLoading) {
-    return <p>Loading...</p>
+    return <Loader />
   }
   if (isError) {
-    return <p>something went wrong...</p>
+    return <ErrorMessage text="Something went wrong" showButton />
   }
   if (!data) {
-    return <p>No result found</p>
+    return <ErrorMessage text="No results found" />
   }
   const meal = data.meals[0]
   const ingredients = Object.keys(meal)

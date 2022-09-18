@@ -23,6 +23,9 @@
   .card-item {
     @apply mx-auto max-w-xs rounded bg-zinc-700 p-2 shadow-md;
   }
+  .wrapper {
+    @apply grid h-[90vh] w-full content-center;
+  }
 }
 .scrollbar {
   scrollbar-gutter: stable;

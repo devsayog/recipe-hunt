@@ -1,4 +1,6 @@
 import CategoryCard from '@/components/CategoryCard'
+import ErrorMessage from '@/components/ErrorMessage'
+import Loader from '@/components/Loader'
 import { Heading2 } from '@/components/Typography'
 import { useGetAreasQuery } from '@/services/mealDb'
 
@@ -6,13 +8,13 @@ const Index = () => {
   const { data, isError, isLoading } = useGetAreasQuery()
 
   if (isLoading) {
-    return <p>Loading...</p>
+    return <Loader />
   }
   if (isError) {
-    return <p>something went wrong...</p>
+    return <ErrorMessage text="Something went wrong" showButton />
   }
   if (!data) {
-    return <p>No result found</p>
+    return <ErrorMessage text="No results found" />
   }
   return (
     <section>

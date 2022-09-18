@@ -1,5 +1,7 @@
 import { useRouter } from 'next/router'
 
+import ErrorMessage from '@/components/ErrorMessage'
+import Loader from '@/components/Loader'
 import MealsList from '@/components/MealsList'
 import { useGetMealsByCategoryQuery } from '@/services/mealDb'
 
@@ -11,13 +13,13 @@ const Slug = () => {
     slug as string,
   )
   if (isLoading) {
-    return <p>Loading...</p>
+    return <Loader />
   }
   if (isError) {
-    return <p>something went wrong...</p>
+    return <ErrorMessage text="Something went wrong" showButton />
   }
   if (!data) {
-    return <p>No result found</p>
+    return <ErrorMessage text="No results found" />
   }
   return <MealsList title={slug as string} meals={data.meals} />
 }
