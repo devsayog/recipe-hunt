@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import AppLink from '@/components/AppLink'
 import ErrorMessage from '@/components/ErrorMessage'
 import Loader from '@/components/Loader'
+import Meta from '@/components/Meta'
 import { Heading2, Heading3, Paragraph } from '@/components/Typography'
 import { useGetMealByIdQuery } from '@/services/mealDb'
 import { selectFav, toggleFav } from '@/slice/favourites'
@@ -52,6 +53,7 @@ const Index = () => {
   }
   return (
     <section>
+      <Meta pageTitle={meal.strMeal} />
       <div className="mx-auto max-w-xs py-3 sm:mx-0 sm:max-w-none md:py-5 xl:py-8">
         <div className="flex justify-center">
           <Image

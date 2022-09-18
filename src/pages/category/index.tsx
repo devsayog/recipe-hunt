@@ -1,6 +1,7 @@
 import CategoryCard from '@/components/CategoryCard'
 import ErrorMessage from '@/components/ErrorMessage'
 import Loader from '@/components/Loader'
+import Meta from '@/components/Meta'
 import { Heading2 } from '@/components/Typography'
 import { useGetCategoriesQuery } from '@/services/mealDb'
 
@@ -18,6 +19,7 @@ const Index = () => {
   }
   return (
     <section>
+      <Meta pageTitle="categories" />
       <Heading2>Select categories</Heading2>
       <div className="card-grid">
         {data.categories.map((c) => (

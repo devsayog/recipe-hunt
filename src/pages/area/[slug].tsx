@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import ErrorMessage from '@/components/ErrorMessage'
 import Loader from '@/components/Loader'
 import MealsList from '@/components/MealsList'
+import Meta from '@/components/Meta'
 import { useGetMealsByAreaQuery } from '@/services/mealDb'
 
 const Index = () => {
@@ -21,7 +22,12 @@ const Index = () => {
     return <ErrorMessage text="No results found" />
   }
 
-  return <MealsList title={slug as string} meals={data.meals} />
+  return (
+    <>
+      <Meta pageTitle={slug as string} />
+      <MealsList title={slug as string} meals={data.meals} />
+    </>
+  )
 }
 
 export default Index

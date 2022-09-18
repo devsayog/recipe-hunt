@@ -1,11 +1,13 @@
 import Image from 'next/image'
 
 import Button from '@/components/Button'
+import Meta from '@/components/Meta'
 import { Heading2, Heading3, Paragraph } from '@/components/Typography'
 
 const Home = () => {
   return (
     <>
+      <Meta />
       <section className="mx-auto max-w-sm md:flex md:max-w-none md:items-center">
         <Image
           src="/recipe.webp"
@@ -41,11 +43,5 @@ const Home = () => {
     </>
   )
 }
-export async function getStaticProps() {
-  return {
-    props: {
-      data: 'hello',
-    },
-  }
-}
+
 export default Home
