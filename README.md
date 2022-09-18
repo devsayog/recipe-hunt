@@ -1,8 +1,42 @@
-# 🚀 Nextjs-TS-Eslint-Prettier-husky-tailwindcss
+# 🚀 Recipe Hunt
 
-Boilerplate and Starter for Next.js , Tailwind CSS 3 and TypeScript with ESLint , Prettier , Husky , Lint-Staged.
+Recipe hunt search and find perfect recipe for you.
 
-## Set up
+## Table of Contents
+
+- [General Info](#general-info)
+- [Technologies used](#technologies-used)
+- [Set up](#set-up)
+
+### General Info
+
+- Recipe hunt search and find perfect recipe for you.
+- Place where you can search and find recipes for your favourite food.
+- It is single page application built with Nextjs.
+- It uses [themealdbapi](https://www.themealdb.com/) api for data.
+
+  #### Screenshot
+
+  ##### Homepage
+
+  ![Homepage Screenshot](/public/home.png 'Homepage')
+
+  ##### Searchpalette
+
+  ![SearchPalette Screenshot](/public/search.png 'Searchpage')
+
+### Technologies used
+
+- Nextjs
+- Typescript
+- tailwindcss
+- @headlessui/react
+- redux-persist
+- react-redux
+- @reduxjs/toolkit
+- [themealdbapi](https://www.themealdb.com/api.php)
+
+### Set up
 
 To run this project, first download or clone this repo
 
@@ -14,5 +48,5 @@ To run this project, first download or clone this repo
     // Build
     npm run build
     // Start Build site
-    // npm start
+    npm start
 ```
