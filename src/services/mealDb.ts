@@ -3,6 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import type { Area } from '@/types/area'
 import type { Categories } from '@/types/category'
 import type { Meals } from '@/types/meal'
+import type { SearchMeals } from '@/types/search'
 
 const meadlDbApi = createApi({
   reducerPath: 'mealDbAPi',
@@ -25,6 +26,9 @@ const meadlDbApi = createApi({
     getMealsByArea: builder.query<Meals, string>({
       query: (q) => `/filter.php?a=${q}`,
     }),
+    search: builder.query<SearchMeals, string>({
+      query: (q) => `/search.php?s=${q}`,
+    }),
   }),
 })
 export const {
@@ -33,5 +37,6 @@ export const {
   useGetMealByIdQuery,
   useGetAreasQuery,
   useGetMealsByAreaQuery,
+  useLazySearchQuery,
 } = meadlDbApi
 export default meadlDbApi
