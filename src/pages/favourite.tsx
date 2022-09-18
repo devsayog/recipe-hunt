@@ -6,7 +6,7 @@ import { useAppSelector } from '@/store/useReduxHooks'
 
 const Favourites = () => {
   const { favourites } = useAppSelector(selectFav)
-  return <MealsList meals={favourites} title="Favourites" />
+  return <MealsList meals={favourites} favourite title="Favourites" />
 }
 
 export default Favourites
